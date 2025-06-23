@@ -1,4 +1,5 @@
 /books
-_pychache_/
+_pycache_/
+/_pycache_
 /.venv
 .env

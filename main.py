@@ -1,4 +1,4 @@
-from stats import char_counter, word_counter
+from stats import char_counter, dict_sorter, word_counter
 
 
 def get_book_test(path_to_file: str):
@@ -11,8 +11,18 @@ def main():
     str_book = get_book_test("books/frankenstein.txt")
     num = word_counter(str_book)
     char_dict = char_counter(str_book)
-    print(f"{num} words found in the document")
-    print(char_dict)
+    list = dict_sorter(char_dict)
+    print(
+        "============ BOOKBOT ============\n",
+        "Analyzing book found at books/frankenstein.txt...\n",
+        "----------- Word Count ----------\n",
+        f"Found {num} total words\n",
+        "--------- Character Count -------",
+        sep="",
+    )
+    for dict in list:
+        print(f"{dict["char"]}: {dict["num"]}")
+    print("============= END ===============")
 
 
 main()
